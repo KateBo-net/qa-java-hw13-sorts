@@ -12,6 +12,7 @@ public class AviaSoulsTest {
 
     @Test
     public void shouldCompareTicketsByPrice() {
+
         int expectedMore = 1;
         int actualMore = ticket1.compareTo(ticket3);
         int expectedLess = -1;
@@ -22,10 +23,12 @@ public class AviaSoulsTest {
         Assertions.assertEquals(expectedMore, actualMore);
         Assertions.assertEquals(expectedLess, actualLess);
         Assertions.assertEquals(expectedEqual, actualEqual);
+
     }
 
     @Test
     public void shouldSearchTicketsAndSortByPrice() {
+
         AviaSouls service = new AviaSouls();
 
         service.add(ticket2);
@@ -41,6 +44,7 @@ public class AviaSoulsTest {
 
     @Test
     public void shouldCompareTicketsByTime() {
+
         TicketTimeComparator comparator = new TicketTimeComparator();
 
         int expectedMore = 1;
@@ -54,10 +58,12 @@ public class AviaSoulsTest {
         Assertions.assertEquals(expectedMore, actualMore);
         Assertions.assertEquals(expectedLess, actualLess);
         Assertions.assertEquals(expectedEqual, actualEqual);
+
     }
 
     @Test
     public void shouldSearchTicketsAndSortByTime() {
+
         TicketTimeComparator comparator = new TicketTimeComparator();
         AviaSouls service = new AviaSouls();
 
@@ -69,10 +75,12 @@ public class AviaSoulsTest {
         Ticket[] ticketsExpected = {ticket2, ticket1};
 
         Assertions.assertArrayEquals(ticketsExpected, ticketsActual);
+
     }
 
     @Test
     public void shouldNotFindTicketsBySearch() {
+
         TicketTimeComparator comparator = new TicketTimeComparator();
         AviaSouls service = new AviaSouls();
 
@@ -89,6 +97,7 @@ public class AviaSoulsTest {
 
         Assertions.assertArrayEquals(ticketsExpectedSearch, ticketsActualSearch);
         Assertions.assertArrayEquals(ticketsExpectedSearchAndSort, ticketsActualSearchAndSort);
+
     }
 
 }
